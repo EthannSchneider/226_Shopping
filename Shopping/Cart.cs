@@ -9,19 +9,29 @@
         #region public methods
         public void Add(List<Article> articles)
         {
-            throw new NotImplementedException();
+            _articles.AddRange(articles);
         }
 
         public void Remove(List<Article>? articles = null)
         {
-            throw new NotImplementedException();
+            if (articles == null)
+            {
+                _articles = new List<Article>();
+            }
+            else
+            {
+                foreach (var article in articles)
+                {
+                    _articles.Remove(article);
+                }
+            }
         }
 
         public List<Article> Articles
         {
             get
             {
-                throw new NotImplementedException();
+                return _articles;
             }
         }
         #endregion public methods

@@ -16,9 +16,11 @@ namespace Shopping
 
         public List<Article> Remove(List<Article>? articles = null)
         {
+            List<Article> tempArticle = new List<Article>();
+            tempArticle.AddRange(_articles);
             if (articles == null)
             {
-                _articles = new List<Article>();
+                _articles.Clear();
             }
             else
             {
@@ -27,6 +29,7 @@ namespace Shopping
                     _articles.Remove(article);
                 }
             }
+            return tempArticle;
         }
 
         public List<Article> Articles

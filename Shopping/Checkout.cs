@@ -10,7 +10,8 @@
         #region public methods
         public void Add(List<Article> articles)
         {
-            throw new NotImplementedException();
+            _articles.AddRange(articles);
+            UpdateBalance();
         }
 
         public List<Article> Remove(Boolean empty = false)
@@ -22,7 +23,7 @@
         {
             get
             {
-                throw new NotImplementedException();
+                return _articles;
             }
         }
 
@@ -30,7 +31,7 @@
         {
             get
             {
-                throw new NotImplementedException();
+                return _balance;
             }
         }
         #endregion public methods
@@ -39,7 +40,10 @@
         private void UpdateBalance()
         {
             {
-                throw new NotImplementedException();
+                for (int i = 0; i < _articles.Count; i++)
+                {
+                    _balance += _articles[i].Price;
+                }
             }
         }
         #endregion private methods

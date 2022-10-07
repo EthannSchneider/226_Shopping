@@ -8,7 +8,7 @@ namespace TestShopping
         {
             {
                 List<Article> articles = new List<Article>();
-                for (int i = 0; i < amountOfArticles; i++)
+                for (int i = 1; i <= amountOfArticles; i++)
                 {
                     articles.Add(new Article(i));
                 }

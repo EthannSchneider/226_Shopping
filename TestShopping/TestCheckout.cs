@@ -78,7 +78,7 @@ namespace TestShopping
             Assert.AreEqual(expectedArticles.Count(), _checkout.Articles.Count());
 
             //when
-            actualArticles = _checkout.Remove();
+            actualArticles = _checkout.Remove(true);
 
             //then
             Assert.AreEqual(expectedArticles.Count(), actualArticles.Count());

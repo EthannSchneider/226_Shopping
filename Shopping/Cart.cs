@@ -17,7 +17,7 @@ namespace Shopping
         public List<Article> Remove(Boolean clearCart = false)
         {
             List<Article> articlesReadyToCheckout = new List<Article>();
-            if (clearCart == true) 
+            if (clearCart) 
             {         
                 articlesReadyToCheckout.AddRange(_articles);
                 _articles.Clear();

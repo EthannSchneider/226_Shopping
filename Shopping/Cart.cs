@@ -17,19 +17,18 @@ namespace Shopping
         public List<Article> Remove(Boolean empty = false)
         {
             List<Article> tempArticle = new List<Article>();
-            tempArticle.AddRange(_articles);
-            if (articles == null)
+            if (empty)
             {
+                tempArticle.AddRange(_articles);
                 _articles.Clear();
             }
             else
             {
-                foreach (var article in articles)
-                {
-                    _articles.Remove(article);
-                }
+                tempArticle.Add(_articles.Last());
+                _articles.Remove(_articles.Last());
             }
             return tempArticle;
+
         }
 
         public List<Article> Articles

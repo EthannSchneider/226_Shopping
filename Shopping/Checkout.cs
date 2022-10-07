@@ -16,7 +16,21 @@
 
         public List<Article> Remove(Boolean empty = false)
         {
-            throw new NotImplementedException();
+            List<Article> articlesReadyToCheckout = new List<Article>();
+
+            if (empty)
+            {
+                articlesReadyToCheckout.AddRange(_articles);
+                _articles.Clear();
+            }
+            else
+            {
+                articlesReadyToCheckout.Add(_articles.Last());
+                _articles.Remove(_articles.Last());
+            }
+
+            UpdateBalance();
+            return articlesReadyToCheckout;
         }
 
         public List<Article> Articles
@@ -39,11 +53,10 @@
         #region private methods
         private void UpdateBalance()
         {
+            _balance = 0f;
+            foreach (Article article in _articles)
             {
-                for (int i = 0; i < _articles.Count; i++)
-                {
-                    _balance += _articles[i].Price;
-                }
+                _balance += article.Price;
             }
         }
         #endregion private methods

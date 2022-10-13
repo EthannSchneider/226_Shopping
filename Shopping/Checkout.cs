@@ -47,18 +47,19 @@
             {
                 return _balance;
             }
+            set
+            {
+                _balance = value;
+            }
         }
 
         public void StartCashingProcess()
-        {
-            throw new NotImplementedException();
-        }
+        {}
         #endregion public methods
 
         #region private methods
         private void UpdateBalance()
         {
-            _balance = 0f;
             foreach (Article article in _articles)
             {
                 _balance += article.Price;

@@ -6,6 +6,7 @@ namespace Shopping
     {
         #region private attributes
         private List<Article> _articles = new List<Article>();
+        private bool _isReleased = false;
         #endregion private attributes
 
         #region public methods
@@ -33,7 +34,7 @@ namespace Shopping
 
         public void Release()
         {
-            throw new NotImplementedException();
+            _isReleased = true;
         }
 
         public List<Article> Articles
@@ -44,7 +45,13 @@ namespace Shopping
             }
         }
 
-        public bool? IsReleased { get; set; }
+        public bool IsReleased
+        {
+            get
+            {
+                return _isReleased;
+            }
+        }
         #endregion public methods
     }
 }

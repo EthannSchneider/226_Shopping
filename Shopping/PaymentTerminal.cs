@@ -4,6 +4,7 @@
     {
         #region private attributes
         private Checkout _checkout = new Checkout();
+        private CreditCard _creditCard = null;
         #endregion private attributes
 
         #region public methods
@@ -12,21 +13,26 @@
             _checkout = checkout;
         }
 
-        public object? CreditCard { get; set; }
+        public CreditCard CreditCard { 
+            get
+            {
+                return _creditCard;
+            }
+        }
 
         public void Cash(float balance)
         {
-            throw new NotImplementedException();
+            _checkout.Balance = 0f;
         }
 
         public void InsertCard(CreditCard creditCard)
         {
-            throw new NotImplementedException();
+            _creditCard = creditCard;
         }
 
         public void RemoveCard()
         {
-            throw new NotImplementedException();
+            _creditCard = null;
         }
         #endregion public methods
     }

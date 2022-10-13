@@ -33,6 +33,11 @@
                 throw new NotImplementedException();
             }
         }
+
+        public void StartCashingProcess()
+        {
+            throw new NotImplementedException();
+        }
         #endregion public methods
 
         #region private methods

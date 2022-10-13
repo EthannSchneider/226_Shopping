@@ -3,7 +3,31 @@
     public class PaymentTerminal
     {
         #region private attributes
-        private Checkout checkout = new Checkout();
+        private Checkout _checkout = new Checkout();
         #endregion private attributes
+
+        #region public methods
+        public PaymentTerminal(Checkout checkout)
+        {
+            _checkout = checkout;
+        }
+
+        public object? CreditCard { get; set; }
+
+        public void Cash(float balance)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void InsertCard(CreditCard creditCard)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveCard()
+        {
+            throw new NotImplementedException();
+        }
+        #endregion public methods
     }
 }
